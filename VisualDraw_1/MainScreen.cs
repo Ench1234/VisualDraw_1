@@ -15,5 +15,9 @@ namespace VisualDraw_1
         {
             InitializeComponent();
         }
+        private void MainScreen_MouseMove(object sender, MouseEventArgs e)
+        {
+            this.Text = Convert.ToString(e.X) + " . " + (e.Y);
+        }
     }
 }
