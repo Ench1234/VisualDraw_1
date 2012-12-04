@@ -1,6 +1,6 @@
 ﻿namespace VisualDraw_1
 {
-    partial class Form1
+    partial class MainScreen
     {
         /// <summary>
         /// Требуется переменная конструктора.
