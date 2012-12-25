@@ -107,6 +107,11 @@ namespace VisualDraw_1
                 sr.Close();
              }
         }
+
+        private void выходToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
               
 
 
