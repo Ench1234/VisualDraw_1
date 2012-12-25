@@ -11,6 +11,7 @@ namespace VisualDraw_1
     public abstract class Shape
     {
         public abstract void DrawWith(Graphics g);
+        public abstract void SaveTo(StreamWriter sw);
     }
     public class Cross : Shape
     {
@@ -19,6 +20,13 @@ namespace VisualDraw_1
         public Cross(int _X, int _Y)
         {
             X = _X; Y = _Y;
+        }
+        public override void SaveTo(StreamWriter sw)
+        {
+            sw.WriteLine("Cross");
+            sw.Write(Convert.ToString(X));
+            sw.Write(' ');
+            sw.WriteLine(Convert.ToString(Y));
         }
         public override void DrawWith(Graphics g)
         {
@@ -39,21 +47,41 @@ namespace VisualDraw_1
         {
             g.DrawLine(p, C, F);
         }
+        public override void SaveTo(StreamWriter sw)
+        {
+            sw.WriteLine("Line");
+            sw.Write(Convert.ToString(C.X));
+            sw.Write(' ');
+            sw.Write(Convert.ToString(C.Y));
+            sw.Write(' ');
+            sw.Write(Convert.ToString(F.X));
+            sw.Write(' ');
+            sw.WriteLine(Convert.ToString(F.Y));
+        }
     }
     public class Circle : Shape
     {
-        Point a, b;
+        Point C, P;
         Pen p = new Pen(Color.Blue);
         int r;
-        public Circle(Point _a, Point _b)
+        public Circle(Point _C, Point _P)
         {
-            a = _a;
-            b = _b;
-            r = Convert.ToInt32(Math.Sqrt(Math.Pow(a.X - b.X,2) + Math.Pow(a.Y - b.Y,2)));
+            C = _C;
+            P = _P;
+            r = Convert.ToInt32(Math.Sqrt(Math.Pow(C.X - P.X,2) + Math.Pow(C.Y - P.Y,2)));
         }
         public override void DrawWith(Graphics g)
         {
-            g.DrawEllipse(p,a.X - r, a.Y - r, 2 * r, 2 * r);
+            g.DrawEllipse(p,C.X - r, C.Y - r, 2 * r, 2 * r);
+        }
+        public override void SaveTo(StreamWriter sw)
+        {
+            sw.WriteLine("Circle");
+            sw.Write(Convert.ToString(C.X));
+            sw.Write(' ');
+            sw.Write(Convert.ToString(C.Y));
+            sw.Write(' ');
+            sw.WriteLine(Convert.ToString(r));
         }
     }
 }
