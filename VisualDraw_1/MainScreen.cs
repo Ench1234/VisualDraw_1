@@ -72,7 +72,7 @@ namespace VisualDraw_1
             if (rb_circle.Checked)
             {
                 if (IsShapeStart) ShapeStart = e.Location;
-                else AddShape(TempShape);   //Shapes.Add(new Circle(ShapeStart, e.Location));
+                else AddShape(TempShape); 
                 IsShapeStart = !IsShapeStart;
             }
             this.Refresh();
@@ -85,6 +85,7 @@ namespace VisualDraw_1
         private void AddShape(Shape s)
         {
             Shapes.Add(s);
+            Shapes_List.Items.Add(s.ConfString);
         }
 
         private void сохранитькакToolStripMenuItem_Click(object sender, EventArgs e)
