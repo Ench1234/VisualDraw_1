@@ -139,9 +139,24 @@ namespace VisualDraw_1
         {
             Application.Exit();
         }
-              
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            while (Shapes_List.SelectedIndices.Count > 0)
+            {
+                Shapes.RemoveAt(Shapes_List.SelectedIndices[0]);
+                Shapes_List.Items.RemoveAt(Shapes_List.SelectedIndices[0]);
+            }
+            button1.Enabled = false;
+            TempShape = null;
+            this.Refresh();
+        }
 
+        private void Shapes_List_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            button1.Enabled = true;
+        }
         
+               
     }
 }

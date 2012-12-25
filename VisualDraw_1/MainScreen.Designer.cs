@@ -65,6 +65,7 @@
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.Shapes_List = new System.Windows.Forms.ListBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -350,14 +351,26 @@
             this.Shapes_List.FormattingEnabled = true;
             this.Shapes_List.Location = new System.Drawing.Point(12, 27);
             this.Shapes_List.Name = "Shapes_List";
-            this.Shapes_List.Size = new System.Drawing.Size(80, 238);
+            this.Shapes_List.Size = new System.Drawing.Size(75, 225);
             this.Shapes_List.TabIndex = 6;
+            this.Shapes_List.SelectedIndexChanged += new System.EventHandler(this.Shapes_List_SelectedIndexChanged);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(12, 270);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Удаление";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // MainScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(356, 305);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.Shapes_List);
             this.Controls.Add(this.rb_circle);
             this.Controls.Add(this.rb_Line);
@@ -414,6 +427,7 @@
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.ListBox Shapes_List;
+        private System.Windows.Forms.Button button1;
 
 
     }
