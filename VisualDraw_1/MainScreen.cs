@@ -56,6 +56,11 @@ namespace VisualDraw_1
             IsShapeStart = !IsShapeStart;
         }
 
+        private void AddShape(Shape s)
+        {
+            Shapes.Add(s);
+        }
+
         private void сохранитькакToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (saveFileDialog1.ShowDialog() == DialogResult.OK) 
@@ -68,6 +73,39 @@ namespace VisualDraw_1
                 }
                 sw.Close();
             }
+        }
+
+        private void открытьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                curFile = openFileDialog1.FileName;
+                Shapes.Clear();
+                StreamReader sr = new StreamReader(curFile);
+                while (!sr.EndOfStream)
+                {
+                    string type = sr.ReadLine();
+                    switch (type)
+                    {
+                        case "Cross":
+                            {
+                                AddShape(new Cross(sr));
+                                break;
+                            }
+                        case "Line":
+                            {
+                                AddShape(new Line(sr));
+                                break;
+                            }
+                        case "Circle":
+                            {
+                                AddShape(new Circle(sr));
+                                break;
+                            }
+                    }
+                }
+                sr.Close();
+             }
         }
               
 
