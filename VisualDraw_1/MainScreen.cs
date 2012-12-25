@@ -39,6 +39,12 @@ namespace VisualDraw_1
             {
                 if (!IsShapeStart) ShapeStart = e.Location;
                 else Shapes.Add(new Line(ShapeStart, e.Location));
+                    IsShapeStart = !IsShapeStart;
+            }
+            if (rb_circle.Checked)
+            {
+                if (IsShapeStart) ShapeStart = e.Location;
+                else Shapes.Add(new Circle(ShapeStart, e.Location));
                 IsShapeStart = !IsShapeStart;
             }
             this.Refresh();

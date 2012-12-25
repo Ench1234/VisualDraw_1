@@ -40,4 +40,20 @@ namespace VisualDraw_1
             g.DrawLine(p, C, F);
         }
     }
+    public class Circle : Shape
+    {
+        Point a, b;
+        Pen p = new Pen(Color.Blue);
+        int r;
+        public Circle(Point _a, Point _b)
+        {
+            a = _a;
+            b = _b;
+            r = Convert.ToInt32(Math.Sqrt(Math.Pow(a.X - b.X,2) + Math.Pow(a.Y - b.Y,2)));
+        }
+        public override void DrawWith(Graphics g)
+        {
+            g.DrawEllipse(p,a.X - r, a.Y - r, 2 * r, 2 * r);
+        }
+    }
 }
