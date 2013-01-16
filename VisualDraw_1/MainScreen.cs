@@ -17,7 +17,6 @@ namespace VisualDraw_1
         Point ShapeStart;
         bool IsShapeStart = true;
         string curFile;
-        Pen p;
         Pen p1 = new Pen(Color.Black);
         Pen p2 = new Pen(Color.Green);
         Shape TempShape;
@@ -67,14 +66,13 @@ namespace VisualDraw_1
             {
                 if (IsShapeStart) ShapeStart = e.Location;
                 else AddShape(TempShape);
-                IsShapeStart = !IsShapeStart;
             }
             if (rb_circle.Checked)
             {
                 if (IsShapeStart) ShapeStart = e.Location;
                 else AddShape(TempShape); 
-                IsShapeStart = !IsShapeStart;
             }
+            IsShapeStart = !IsShapeStart;
             this.Refresh();
         }
         private void rb_CheckedChanged(object sender, EventArgs e)

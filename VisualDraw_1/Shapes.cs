@@ -22,17 +22,17 @@ namespace VisualDraw_1
         {
             X = _X; Y = _Y;
         }
+        public override void DrawWith(Graphics g, Pen p)
+        {
+            g.DrawLine(p, X - 4, Y - 4, X + 4, Y + 4);
+            g.DrawLine(p, X + 4, Y - 4, X - 4, Y + 4);
+        }
         public override void SaveTo(StreamWriter sw)
         {
             sw.WriteLine("Cross");
             sw.Write(Convert.ToString(X));
             sw.Write(' ');
             sw.WriteLine(Convert.ToString(Y));
-        }
-        public override void DrawWith(Graphics g, Pen p)
-        {
-            g.DrawLine(p, X - 4, Y - 4, X + 4, Y + 4);
-            g.DrawLine(p, X + 4, Y - 4, X - 4, Y + 4);
         }
         public Cross(StreamReader _sr)
         {
