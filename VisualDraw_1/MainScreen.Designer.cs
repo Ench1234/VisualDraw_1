@@ -376,6 +376,7 @@
             this.Controls.Add(this.rb_Line);
             this.Controls.Add(this.rb_Cross);
             this.Controls.Add(this.menuStrip1);
+            this.DoubleBuffered = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainScreen";
             this.Text = "Form1";
