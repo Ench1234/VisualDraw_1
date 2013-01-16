@@ -18,9 +18,8 @@ namespace VisualDraw_1
         bool IsShapeStart = true;
         string curFile;
         Pen p1 = new Pen(Color.Black);
-        Pen p2 = new Pen(Color.Green);
+        Pen p2 = new Pen(Color.Red);
         Shape TempShape;
-        Pen p3 = new Pen(Color.Red, 2);
         
         public MainScreen()
         {

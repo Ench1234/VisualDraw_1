@@ -17,7 +17,6 @@ namespace VisualDraw_1
     public class Cross : Shape
     {
         int X, Y;
-        Pen p = new Pen(Color.Red);
         public Cross(int _X, int _Y)
         {
             X = _X; Y = _Y;
@@ -53,7 +52,6 @@ namespace VisualDraw_1
     public class Line : Shape
     {
         Point C, F;
-        Pen p = new Pen(Color.Blue);
         public Line(Point _C, Point _F)
         {
             this.C = _C; this.F = _F;
@@ -93,7 +91,6 @@ namespace VisualDraw_1
     public class Circle : Shape
     {
         Point C, P;
-        Pen p = new Pen(Color.Blue);
         int r;
         public Circle(Point _C, Point _P)
         {
