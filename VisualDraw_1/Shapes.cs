@@ -28,15 +28,15 @@ namespace VisualDraw_1
         }
         public override void SaveTo(StreamWriter sw)
         {
-            sw.WriteLine("Cross");
+            sw.WriteLine("Крестик");
             sw.Write(Convert.ToString(X));
-            sw.Write(' ');
+            sw.Write(',');
             sw.WriteLine(Convert.ToString(Y));
         }
         public Cross(StreamReader _sr)
         {
             string line = _sr.ReadLine();
-            string[] str = line.Split(' ');
+            string[] str = line.Split(',');
             X = Convert.ToInt32(str[0]);
             Y = Convert.ToInt32(str[1]);
         }
@@ -62,23 +62,25 @@ namespace VisualDraw_1
         }
         public override void SaveTo(StreamWriter sw)
         {
-            sw.WriteLine("Line");
+            sw.WriteLine("Линия");
             sw.Write(Convert.ToString(C.X));
-            sw.Write(' ');
-            sw.Write(Convert.ToString(C.Y));
-            sw.Write(' ');
+            sw.Write(',');
+            sw.WriteLine(Convert.ToString(C.Y));
             sw.Write(Convert.ToString(F.X));
-            sw.Write(' ');
+            sw.Write(',');
             sw.WriteLine(Convert.ToString(F.Y));
         }
         public Line(StreamReader _sr)
         {
             string line = _sr.ReadLine();
-            string[] str = line.Split(' ');
+            string[] str = line.Split(',');
             C.X = Convert.ToInt32(str[0]);
             C.Y = Convert.ToInt32(str[1]);
-            F.X = Convert.ToInt32(str[2]);
-            F.Y = Convert.ToInt32(str[3]);
+
+            line = _sr.ReadLine();
+            str = line.Split(',');
+            F.X = Convert.ToInt32(str[0]);
+            F.Y = Convert.ToInt32(str[1]);
         }
         public override string ConfString
         {
@@ -104,20 +106,21 @@ namespace VisualDraw_1
         }
         public override void SaveTo(StreamWriter sw)
         {
-            sw.WriteLine("Circle");
+            sw.WriteLine("Окружность");
             sw.Write(Convert.ToString(C.X));
-            sw.Write(' ');
-            sw.Write(Convert.ToString(C.Y));
-            sw.Write(' ');
+            sw.Write(',');
+            sw.WriteLine(Convert.ToString(C.Y));
             sw.WriteLine(Convert.ToString(r));
         }
         public Circle(StreamReader _sr)
         {
             string line = _sr.ReadLine();
-            string[] str = line.Split(' ');
+            string[] str = line.Split(',');
             C.X = Convert.ToInt32(str[0]);
             C.Y = Convert.ToInt32(str[1]);
-            r = Convert.ToInt32(str[2]);
+            line = _sr.ReadLine();
+            str = line.Split();
+            r = Convert.ToInt32(str[0]);
         }
         public override string ConfString
         {

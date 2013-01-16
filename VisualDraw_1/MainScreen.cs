@@ -111,17 +111,17 @@ namespace VisualDraw_1
                     string type = sr.ReadLine();
                     switch (type)
                     {
-                        case "Cross":
+                        case "Крестик":
                             {
                                 AddShape(new Cross(sr));
                                 break;
                             }
-                        case "Line":
+                        case "Линия":
                             {
                                 AddShape(new Line(sr));
                                 break;
                             }
-                        case "Circle":
+                        case "Окружность":
                             {
                                 AddShape(new Circle(sr));
                                 break;
